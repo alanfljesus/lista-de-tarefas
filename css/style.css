@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Poppins:wght@400;500;600;700;900&family=Roboto:ital,wght@0,300;0,400;1,500&display=swap');
+/* 
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif; 
+font-family: 'Oswald', sans-serif;
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: rgb(34, 193, 195);
+    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(40, 162, 111, 1) 74%);
+
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: 'Roboto', sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+ 
+    color: #f4f2f2;
+}
+
+h3 {
+    position: absolute;
+    top: 120px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+ 
+    color: #fffafa;
+}
+
+.container {
+    border: 2px solid #fafafa;
+    padding: 30px 40px;
+    width: 40%;
+    min-width: 480px;
+}
+
+.new-task-container {
+    background-color: #fafafa;
+    padding: 30px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 0px #000;
+    display: flex;
+}
+
+.new-task-container input {
+    flex: 3;
+    font-size: 0.8rem;
+    border: 2px solid #d1d3d4;
+    border-radius: 5px;
+    padding: 12px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.new-task-container input:focus {
+    outline: none;
+    border-color: #41b883;
+}
+
+.new-task-button {
+    flex: 1;
+    border-radius: 5px;
+    font-weight: 500;
+    height: 100%;
+    background-color: #41b883;
+    color: #fafafa;
+    padding: 12px;
+    cursor: pointer;
+
+    font-size: 0.8rem;
+
+    transition: all 0.6s ease;
+}
+
+.new-task-button:hover {
+    background-color: #35966a;
+}
+
+.tasks-container {
+    background-color: #f4f4f4fb;
+    padding: 20px 20px;
+    margin-top: 60px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px #000;
+
+    font-size: 0.85rem;
+}
+
+/* Utilities */
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.task-item i {
+    background-color: #41b883;
+    color: #fafafa;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: all 0.6s ease;
+}
+
+.task-item i:hover {
+    background-color: #c62222;
+}
+
+.error {
+    border: 2px solid #e61919 !important;
+}
+
+.error::placeholder {
+    color: #e61919;
+}
+
+.completed {
+    text-decoration: 3px line-through;
+    text-decoration-color: green; 
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+
+    padding: 10px 0px 5px 0px;
+
+    border-top: 1px solid #f4f4f4fb;
+
+    width: 100%;
+
+    text-align: center;
+}
+
+footer p {
+    color: #f4f4f4e6;
+    
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+}
+
+/*RESPONSIVE*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+h1 {
+    font-size: 28px;  
+}
+
+h3 {
+    font-size: 12px;
+}
+
+.container {
+    min-width: 320px;
+    padding: 20px 20px;
+}
+
+.new-task-container {
+    padding: 20px 10px; 
+    font-size: 0.6rem;
+}
+
+.task-item {
+    margin-top: 0.2rem;
+    margin-bottom: 0.1rem;
+}
+
+.task-item i {
+    padding: 6px;
+}
+
+.new-task-container input {
+    flex: 3;
+    font-size: 0.7rem;
+    margin-right: 5px;
+    padding: 9px;
+}
+
+.new-task-button {
+    flex: 1;
+    border-radius: 5px;
+    font-weight: 500;
+    height: 100%;
+    font-size: 0.7rem;
+    padding: 9px;
+}
+
+}
