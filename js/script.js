@@ -117,6 +117,8 @@ const refreshTasksUsingLocalStorage = () => {
     if (task.isCompleted) {
       taskContent.classList.add("completed");
     }
+  }
+}
 
     taskContent.addEventListener('click', () => handleClick(taskContent));
 
