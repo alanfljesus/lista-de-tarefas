@@ -3,14 +3,13 @@ const addTaskButton = document.querySelector('.new-task-button')
 
 const tasksContainer = document.querySelector('.tasks-container')
 
-console.log(tasksContainer)
-
 const validateInput = () => {
   return inputElement.value.trim().length > 0
 
 
   /* 
   O código acima é a mesma coisa que ⤵
+
   if (inputElement.value.trim().length > 0) {
       return: true;
   } else {
@@ -106,7 +105,9 @@ const updateLocalStorage = () => {
 const refreshTasksUsingLocalStorage = () => {
   let tasksFromLocalStorage = JSON.parse(localStorage.getItem('tasks'));
 
-  for (let task of tasksFromLocalStorage) {
+  if (!tasksFromLocalStorage) return; // Se o usuário estiver acessando pela primeeira vez e não tem nada no Local Storage, entãe ele vai sair da função.
+
+  for (const task of tasksFromLocalStorage) {
     let taskItemContainer = document.createElement('div')
     taskItemContainer.classList.add('task-item')
 
@@ -117,8 +118,6 @@ const refreshTasksUsingLocalStorage = () => {
     if (task.isCompleted) {
       taskContent.classList.add("completed");
     }
-  }
-}
 
     taskContent.addEventListener('click', () => handleClick(taskContent));
 
@@ -129,12 +128,12 @@ const refreshTasksUsingLocalStorage = () => {
 
     deleteItem.addEventListener('click', () => handleDeleteClick(taskItemContainer, taskContent));
 
+
     taskItemContainer.appendChild(taskContent);
     taskItemContainer.appendChild(deleteItem);
 
     tasksContainer.appendChild(taskItemContainer);
-  }
-
+  };
 }
 
 refreshTasksUsingLocalStorage();
@@ -142,3 +141,4 @@ refreshTasksUsingLocalStorage();
 addTaskButton.addEventListener("click", () => handleAddTank());
 
 inputElement.addEventListener('change', () => handleInputChange());
+
